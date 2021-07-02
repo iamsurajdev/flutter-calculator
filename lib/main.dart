@@ -5,7 +5,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,29 +12,31 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: MyHomePage(),
+      home: Calculator(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class Calculator extends StatelessWidget {
+  const Calculator({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Calc for you"),
+      backgroundColor: Colors.deepPurple[100],
+      // appBar: AppBar(
+      //   title: Text("Calculator"),
+      // ),
+      body: Column(
+        children: <Widget>[
+          Expanded(flex: 1, child: Container()),
+          Expanded(
+              flex: 2,
+              child: Container(
+                color: Colors.cyan,
+              )),
+        ],
       ),
-      body: Column(children: <Widget>[
-        Card(child: Text("Dummy Text"), margin: EdgeInsets.all(12),)
-      ],)
     );
   }
 }
