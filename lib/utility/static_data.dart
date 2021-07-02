@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class StaticData {
   static List<String> buttonsData = [
     "C",
@@ -21,4 +23,17 @@ class StaticData {
     "00",
     "=",
   ];
+
+  static bool isOperator(String item) {
+    if (item == "%" ||
+        item == "/" ||
+        item == "*" ||
+        item == "-" ||
+        item == "+" ||
+        item == "DEL" ||
+        item == "C") {
+      return true;
+    }
+    return false;
+  }
 }
