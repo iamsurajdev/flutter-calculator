@@ -39,7 +39,7 @@ class Calculator extends StatelessWidget {
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(15.0)),
-                color: Colors.cyan,
+                color: Colors.white,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey,
@@ -53,10 +53,23 @@ class Calculator extends StatelessWidget {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4),
                 itemBuilder: (BuildContext context, int index) {
+                  if (StaticData.buttonsData.length - 1 == index) {
+                    return Button(
+                      buttonText: StaticData.buttonsData[index],
+                      textColor: Colors.white,
+                      backgroundColor: Colors.greenAccent[400],
+                    );
+                  }
                   return Button(
-                    backgroundColor: Colors.cyanAccent[100],
                     buttonText: StaticData.buttonsData[index],
-                    textColor: Colors.black,
+                    textColor:
+                        StaticData.isOperator(StaticData.buttonsData[index])
+                            ? Colors.white
+                            : Colors.black,
+                    backgroundColor:
+                        StaticData.isOperator(StaticData.buttonsData[index])
+                            ? Colors.deepPurple
+                            : Colors.blue[400],
                   );
                 },
               ),
