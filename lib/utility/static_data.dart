@@ -1,5 +1,5 @@
 class StaticData {
-  List<String> buttonsData = [
+  static List<String> buttonsData = [
     "C",
     "DEL",
     "%",
