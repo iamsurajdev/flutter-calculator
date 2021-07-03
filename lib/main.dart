@@ -30,6 +30,12 @@ class _CalculatorState extends State<Calculator> {
   var problem = '';
   var answer = '';
 
+  void buttonClick(value) {
+    setState(() {
+      problem += value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,10 +45,13 @@ class _CalculatorState extends State<Calculator> {
       // ),
       body: Column(
         children: <Widget>[
-          Expanded(flex: 1, child: CalculatorPrompt()),
+          Expanded(
+            flex: 1,
+            child: CalculatorPrompt(answerText: answer, problemText: problem),
+          ),
           Expanded(
             flex: 2,
-            child: CalculatorButtons(),
+            child: CalculatorButtons(this.buttonClick),
           ),
         ],
       ),

@@ -4,7 +4,10 @@ import 'package:calculator/widget/calculator_button.dart';
 import 'package:flutter/material.dart';
 
 class CalculatorButtons extends StatelessWidget {
-  const CalculatorButtons({Key? key}) : super(key: key);
+  final onClick;
+
+  CalculatorButtons(this.onClick);
+  // const CalculatorButtons({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +30,19 @@ class CalculatorButtons extends StatelessWidget {
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
         itemBuilder: (BuildContext context, int index) {
           if (StaticData.buttonsData.length - 1 == index) {
-            return Button(
+            return CalculatorButton(
+              onClick: () {
+                onClick(StaticData.buttonsData[index]);
+              },
               buttonText: StaticData.buttonsData[index],
               textColor: Colors.white,
               backgroundColor: Colors.greenAccent[400],
             );
           }
-          return Button(
+          return CalculatorButton(
+            onClick: () {
+              onClick(StaticData.buttonsData[index]);
+            },
             buttonText: StaticData.buttonsData[index],
             textColor: StaticData.isOperator(StaticData.buttonsData[index])
                 ? Colors.white

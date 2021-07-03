@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CalculatorPrompt extends StatelessWidget {
-  const CalculatorPrompt({Key? key}) : super(key: key);
+  final String problemText;
+  final String answerText;
+
+  CalculatorPrompt({this.answerText: "", this.problemText: ""});
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +17,13 @@ class CalculatorPrompt extends StatelessWidget {
         Container(
           padding: EdgeInsets.all(20),
           alignment: Alignment.centerLeft,
-          child: Text("99839"),
+          child: Text(problemText),
         ),
         Container(
           padding: EdgeInsets.all(20),
           alignment: Alignment.centerRight,
           child: Text(
-            "= 99839",
+            answerText.length > 0 ? "= $answerText" : "",
             style: TextStyle(fontSize: 30),
           ),
         ),
