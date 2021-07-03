@@ -26,6 +26,9 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
+  var problem = '';
+  var answer = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
