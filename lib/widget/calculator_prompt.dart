@@ -5,6 +5,26 @@ class CalculatorPrompt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        SizedBox(
+          height: 50,
+        ),
+        Container(
+          padding: EdgeInsets.all(20),
+          alignment: Alignment.centerLeft,
+          child: Text("99839"),
+        ),
+        Container(
+          padding: EdgeInsets.all(20),
+          alignment: Alignment.centerRight,
+          child: Text(
+            "= 99839",
+            style: TextStyle(fontSize: 30),
+          ),
+        ),
+      ],
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:calculator/widget/calculator_buttons.dart';
+import 'package:calculator/widget/calculator_prompt.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -38,7 +39,7 @@ class _CalculatorState extends State<Calculator> {
       // ),
       body: Column(
         children: <Widget>[
-          Expanded(flex: 1, child: Container()),
+          Expanded(flex: 1, child: CalculatorPrompt()),
           Expanded(
             flex: 2,
             child: CalculatorButtons(),
