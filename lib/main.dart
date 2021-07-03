@@ -41,21 +41,7 @@ class _CalculatorState extends State<Calculator> {
           Expanded(flex: 1, child: Container()),
           Expanded(
             flex: 2,
-            child: Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(15.0)),
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0.0, 1.0), //(x,y)
-                      blurRadius: 5.0,
-                    ),
-                  ],
-                ),
-                child: CalculatorButtons()),
+            child: CalculatorButtons(),
           ),
         ],
       ),
